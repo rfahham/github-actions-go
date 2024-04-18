@@ -24,14 +24,17 @@ jobs:
     - name: Display Go version
       run: go version
 
-    - name: Run
+    - name: Run File
       run: go run hello-world.go
       
-    - name: Build
+    - name: Build Binary
       run: go build -v hello-world.go
     
-    - name: List
+    - name: List Files
       run: ls -la
+
+    - name: Run Binary
+      run: ./hello-world
   
     # - name: eslint
     #   run: npm i && npm run lint
