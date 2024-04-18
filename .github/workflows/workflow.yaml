@@ -15,19 +15,23 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up GO
-      uses: actions/setup-go@v3
+    - name: Setup Go 1.21.x
+      uses: actions/setup-go@v4
       with:
-        go-version-file: 'go.mod'
-
-    - name: Run
-      run: go run hello-world.go
-      
-    - name: Build
-      run: go build -v hello-world.go
+        # Semantic version range syntax or exact version of Go
+        go-version: '1.21.x'
     
-    - name: List
-      run: ls -la
+    - name: Display Go version
+        run: go version
+
+    # - name: Run
+    #   run: go run hello-world.go
+      
+    # - name: Build
+    #   run: go build -v hello-world.go
+    
+    # - name: List
+    #   run: ls -la
   
     # - name: eslint
     #   run: npm i && npm run lint
