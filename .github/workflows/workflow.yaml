@@ -18,7 +18,7 @@ jobs:
     - name: Set up GO
       uses: actions/setup-go@v3
       with:
-        go-version-file: go.mod
+        go-version-file: 'go.mod'
 
     - name: Run
       run: go run hello-world.go
