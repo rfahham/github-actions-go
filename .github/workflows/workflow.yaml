@@ -24,14 +24,14 @@ jobs:
     - name: Display Go version
       run: go version
 
-    # - name: Run
-    #   run: go run hello-world.go
+    - name: Run
+      run: go run hello-world.go
       
-    # - name: Build
-    #   run: go build -v hello-world.go
+    - name: Build
+      run: go build -v hello-world.go
     
-    # - name: List
-    #   run: ls -la
+    - name: List
+      run: ls -la
   
     # - name: eslint
     #   run: npm i && npm run lint
