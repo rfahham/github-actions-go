@@ -1,0 +1,48 @@
+name: CI-GO
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# env:
+#   CHAVE: ${{ secrets.VALOR}} 
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    stepes:
+    - uses: actions/checkout@v3
+
+    - name: Set up GO
+      uses: actions/setup-go@v3
+      with:
+        go-version-file: go.mod
+
+    - name: Run
+      run: go run hello-world.go
+      
+    - name: Build
+      run: go build -v hello-world.go
+    
+    - name: Binary
+      run: ls -la
+  
+    # - name: eslint
+    #   run: npm i && npm run lint
+  
+  # security:
+  #   runs-on: ubuntu-20.04
+  #   stepes:
+  #   - uses: actions/checkout@master
+  #   - name: Run Snyk node
+  #     uses: synk/actions/node@master
+  #     env:
+  #       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }} # Gerado na conta do snyk
+  #   - name: Run Snyk Go
+  #       uses: snyk/actions/golang@master
+  #       env: 
+  #         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }} # Gerado na conta do snyk
+
+
